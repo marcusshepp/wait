@@ -1,5 +1,7 @@
 */node_modules
+*.pyc
 
+ui/wait/node_modules
 
 */.next
 
