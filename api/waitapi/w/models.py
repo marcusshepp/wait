@@ -19,7 +19,7 @@ class Exercise(models.Model):
         return str(self.name)
 
 
-class Set(models.Model):
+class Sett(models.Model):
     workout = models.ForeignKey(Workout, on_delete=models.CASCADE, related_name='sets')
     exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE)
     weight = models.DecimalField(max_digits=5, decimal_places=2)  # In kg or lbs

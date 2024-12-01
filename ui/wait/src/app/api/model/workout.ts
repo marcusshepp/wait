@@ -10,14 +10,15 @@
  * Do not edit the class manually.
  */
 import { Cardio } from './cardio';
+import { ModelSet } from './modelSet';
 
 
-export interface Workout { 
+export interface Workout {
     readonly id?: number;
     user: number;
     readonly date_created?: Date;
     notes?: string | null;
-    readonly sets?: Array<Set>;
+    readonly sets?: ModelSet[];
     readonly cardio_sessions?: Array<Cardio>;
 }
 
