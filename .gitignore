@@ -3,6 +3,8 @@
 
 ui/wait/node_modules
 
+ui/wait/.angular
+
 */.next
 
 */.nuxt
