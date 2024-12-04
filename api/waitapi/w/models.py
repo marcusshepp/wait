@@ -19,8 +19,8 @@ class Exercise(models.Model):
         return str(self.name)
 
 
-class Sett(models.Model):
-    workout = models.ForeignKey(Workout, on_delete=models.CASCADE, related_name='sets')
+class SetMeister(models.Model):
+    workout = models.ForeignKey(Workout, on_delete=models.CASCADE, related_name='set_meister')
     exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE)
     weight = models.DecimalField(max_digits=5, decimal_places=2)  # In kg or lbs
     reps = models.PositiveIntegerField()

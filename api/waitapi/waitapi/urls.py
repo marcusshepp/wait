@@ -4,6 +4,7 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework import permissions
 from w.views import WorkoutViewSet
+from users.views import LoginView, RegisterView
 
 router = DefaultRouter()
 router.register(r'workouts', WorkoutViewSet)
@@ -26,5 +27,6 @@ urlpatterns = [
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('swagger.json', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
-    path('api-auth/', include('rest_framework.urls')),
+    path('login/', LoginView.as_view(), name='login'),
+    path('register/', RegisterView.as_view(), name='register'),
 ]

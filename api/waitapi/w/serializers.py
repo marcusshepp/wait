@@ -1,16 +1,16 @@
 from rest_framework import serializers
-from .models import Workout, Exercise, Sett, Cardio
+from .models import Workout, Exercise, Cardio, SetMeister
 
 class ExerciseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Exercise
         fields = '__all__'
 
-class SetSerializer(serializers.ModelSerializer):
+class SetMeisterSerializer(serializers.ModelSerializer):
     exercise = ExerciseSerializer()
 
     class Meta:
-        model = Sett
+        model = SetMeister
         fields = '__all__'
 
 class CardioSerializer(serializers.ModelSerializer):
@@ -19,13 +19,13 @@ class CardioSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class WorkoutSerializer(serializers.ModelSerializer):
-    sets = SetSerializer(many=True, read_only=True)
+    set_meister = SetMeisterSerializer(many=True, read_only=True)
     cardio_sessions = CardioSerializer(many=True, read_only=True)
 
     class Meta:
         model = Workout
-        fields = ['id', 'user', 'date_created', 'notes', 'sets', 'cardio_sessions']
-        read_only_fields = ['id', 'date_created', 'sets', 'cardio_sessions']
+        fields = ['id', 'user', 'date_created', 'notes', 'set_meister', 'cardio_sessions']
+        read_only_fields = ['id', 'date_created', 'set_meister', 'cardio_sessions']
 
 class WorkoutCreateSerializer(serializers.ModelSerializer):
     class Meta:

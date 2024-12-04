@@ -38,11 +38,13 @@ INSTALLED_APPS = [
         'django.contrib.messages',
         'django.contrib.staticfiles',
         'w',
+        'users',
         'rest_framework',
         'rest_framework.authtoken',
         'drf_yasg',
         'corsheaders',
-        ]
+        'rest_framework_simplejwt',
+]
 
 MIDDLEWARE = [
         'corsheaders.middleware.CorsMiddleware',
@@ -131,12 +133,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
         'DEFAULT_AUTHENTICATION_CLASSES': [
-            'rest_framework.authentication.SessionAuthentication',
-            'rest_framework.authentication.TokenAuthentication',
+            'rest_framework_simplejwt.authentication.JWTAuthentication',
             ],
-        'DEFAULT_PERMISSION_CLASSES': [
-            'rest_framework.permissions.IsAuthenticated',
-            ],
+        # 'DEFAULT_PERMISSION_CLASSES': [
+        #     'rest_framework.permissions.IsAuthenticated',
+        #     ],
         }
 
 CORS_ALLOWED_ORIGINS = [

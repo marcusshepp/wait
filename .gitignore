@@ -1,9 +1,12 @@
 */node_modules
-*.pyc
+**/**.pyc
+*/__pycache__
+*/.pytest
+**/__pycache__/
 
-ui/wait/node_modules
+ui/node_modules
 
-ui/wait/.angular
+ui/.angular
 
 */.next
 
