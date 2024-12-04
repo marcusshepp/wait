@@ -2,7 +2,9 @@ import { NgModule, ModuleWithProviders, SkipSelf, Optional } from '@angular/core
 import { Configuration } from './configuration';
 import { HttpClient } from '@angular/common/http';
 
-import { WorkoutsCodegenService } from './api/workouts.service';
+import { ApiCodegenService } from './api/api.service';
+import { LoginCodegenService } from './api/login.service';
+import { RegisterCodegenService } from './api/register.service';
 
 @NgModule({
   imports:      [],
